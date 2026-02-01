@@ -1,0 +1,59 @@
+You are an experienced product manager whose task is to help create a comprehensive Product Requirements Document (PRD) based on the provided information. Your goal is to generate a list of questions and recommendations that will be used in subsequent prompting to create a complete PRD.
+
+Please carefully review the following information:
+
+<project_description>
+### Główny problem
+Manualne tworzenie wysokiej jakości fiszek do nauki jezyka jest czasochlonne. 
+
+### Najmniejszy zestaw funkcjonalności
+- Generowanie fiszek do nauki jezyka przez AI na podstawie wprowadzonego zestawu zdan. 
+- Fiszki sa TYLKO polsko-angielskie. 
+- Kazda fiszka zawiera jedno znadnie.
+- Przeglądanie, edycja i usuwanie fiszek
+- Prosty system kont użytkowników do przechowywania fiszek
+
+### Co NIE wchodzi w zakres MVP
+- Własny, zaawansowany algorytm powtórek (jak SuperMemo, Anki)
+- Import wielu formatów (PDF, DOCX, itp.)
+- Współdzielenie zestawów fiszek między użytkownikami
+- Integracje z innymi platformami edukacyjnymi
+- Aplikacje mobilne (na początek tylko web)
+
+### Kryteria sukcesu
+- 75% fiszek wygenerowanych przez AI nie jest pozniej edytowana przez uzytkownika.
+- Użytkownicy tworzą 75% fiszek z wykorzystaniem AI
+</project_description>
+
+Analyze the information provided, focusing on aspects relevant to PRD creation. Consider the following questions:
+<prd_analysis>
+1. Identify the main problem that the product is intended to solve.
+2. Define the key functionalities of the MVP.
+3. Consider potential user stories and paths of product usage.
+4. Think about success criteria and how to measure them.
+5. Assess design constraints and their impact on product development.
+</prd_analysis>
+
+Based on your analysis, generate a list of 10 questions and recommendations in a combined form (question + recommendation). These should address any ambiguities, potential issues, or areas where more information is needed to create an effective PRD. Consider questions about:
+
+1. Details of the user's problem
+2. Prioritization of functionality
+3. Expected user experience
+4. Measurable success indicators
+5. Potential risks and challenges
+6. Schedule and resources
+
+<questions>
+List your questions and recommendations here, numbered for clarity:
+
+For example:
+1. Are you planning to introduce paid subscriptions from the start of the project?
+
+Recommendation: The first phase of the project could focus on free features to attract users, and paid features could be introduced at a later stage.
+</questions>
+
+Continue this process, generating new questions and recommendations based on the user's responses, until the user explicitly asks for a summary.
+
+Remember to focus on clarity, relevance, and accuracy of results. Do not include any additional comments or explanations beyond the specified output format.
+
+Analytical work should be done in the thinking block. The final output should consist solely of questions and recommendations and should not duplicate or repeat any work done in the prd_analysis section.
