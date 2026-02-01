@@ -5,20 +5,29 @@ import { DAILY_GENERATION_LIMIT, checkDailyGenerationLimit } from "./generation-
 import type { Database } from "../../db/database.types";
 
 // Mock Supabase client type
-type MockSupabaseClient = {
+interface MockSupabaseClient {
   from: (table: string) => {
     select: (columns: string) => {
-      eq: (column: string, value: string) => {
-        gte: (column: string, value: string) => {
-          lt: (column: string, value: string) => Promise<{
-            data: Array<{ input_sentences_count: number }> | null;
+      eq: (
+        column: string,
+        value: string
+      ) => {
+        gte: (
+          column: string,
+          value: string
+        ) => {
+          lt: (
+            column: string,
+            value: string
+          ) => Promise<{
+            data: { input_sentences_count: number }[] | null;
             error: Error | null;
           }>;
         };
       };
     };
   };
-};
+}
 
 describe("Generation Limit Service", () => {
   const mockUserId = "test-user-id";
@@ -73,10 +82,7 @@ describe("Generation Limit Service", () => {
               gte: () => ({
                 lt: () =>
                   Promise.resolve({
-                    data: [
-                      { input_sentences_count: 30 },
-                      { input_sentences_count: 20 },
-                    ],
+                    data: [{ input_sentences_count: 30 }, { input_sentences_count: 20 }],
                     error: null,
                   }),
               }),
@@ -270,11 +276,7 @@ describe("Generation Limit Service", () => {
       } as unknown as MockSupabaseClient;
 
       await expect(
-        checkDailyGenerationLimit(
-          mockSupabase as unknown as SupabaseClient<Database>,
-          mockUserId,
-          10
-        )
+        checkDailyGenerationLimit(mockSupabase as unknown as SupabaseClient<Database>, mockUserId, 10)
       ).rejects.toThrow("Failed to check daily generation limit: Database connection failed");
     });
 
